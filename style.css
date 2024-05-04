@@ -53,7 +53,7 @@
   top: 10px;   /* Расположение в верхней части экрана */
 }
 
-##################
+
 .nav a, .dropdown-content a {
   padding: 10px 20px;
   display: block;
@@ -106,8 +106,6 @@
 .dropdown:hover .arrow {
   transform: rotate(180deg); /* Поворачиваем стрелку на 180 градусов при наведении */
 }
-
-################
 
 
 .content {

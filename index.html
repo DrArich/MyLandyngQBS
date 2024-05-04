@@ -20,6 +20,7 @@
   transform: translate(-50%, -50%); /* Смещаем видео так, чтобы его центр был в центре экрана */
   min-width: 100%;
   min-height: 100%;
+   object-fit: cover;
   width: auto;
   height: auto;
   z-index: -100;
@@ -34,6 +35,10 @@
       text-align: center;
       z-index: 1;
     }
+
+
+
+
 
 ############################
 
@@ -56,7 +61,7 @@
   background-color: rgba(255, 255, 255, 0.3);
   position: relative; /* Это позволяет использовать свойства top, left, right, bottom */
   margin-top: -50px; /* Поднять ссылки на 50px выше */
-  left: 1200px;  /* Расположение в левой части экрана */
+  left: 1000px;  /* Расположение в левой части экрана */
   top: 10px;   /* Расположение в верхней части экрана */
 }
 
@@ -111,8 +116,6 @@
     .content {
       
       
-      
-      
     } 
 
 .content {
@@ -149,8 +152,29 @@
   opacity: 0.8; /* Делает логотип немного прозрачнее при наведении */
 }
 
+.marquee-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+ 
+}
 
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
 
+.marquee img {
+ width: 200px; /* Новая ширина логотипа */
+  margin-right: 20px; /* Расстояние между логотипами */
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
    
   </style>
 
@@ -164,6 +188,18 @@
   </div>
 
 
+<div class="marquee-container">
+  <div class="marquee">
+    <img src=".\source\logo\OneShott.png" alt="OneShott">
+    <img src=".\source\logo\nvidia.png" alt="NVIDIA">
+    <img src=".\source\logo\AMD.png" alt="AMD">
+<img src=".\source\logo\openai.png" alt="OpenAI">
+<img src=".\source\logo\trans.png" alt="trans">
+<img src=".\source\logo\aonit.png" alt="aonit">
+
+
+  </div>
+</div>
 
 
 

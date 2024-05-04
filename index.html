@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Transparent Navigation Menu with Video Background</title>
-
   <style>
     body, html {
       height: 100%;
@@ -13,48 +12,51 @@
     }
 
     /* Video Background */
-    #background-video {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: -100;
-      background-size: cover;
-    }
+  #background-video {
+  position: fixed;
+  top: 50%;  /* Центрируем по вертикали */
+  left: 50%; /* Центрируем по горизонтали */
+  transform: translate(-50%, -50%); /* Смещаем видео так, чтобы его центр был в центре экрана */
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  object-fit: cover; /* Гарантирует, что видео покроет элемент, сохраняя пропорции */
+}
 
-    /* Header and Navigation styles */
-    .header {
+      .header {
       background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
       color: #ffffff;
-      padding: 10px 20px;
+      padding: 10px 220px;
       text-align: center;
       z-index: 1;
     }
 
 ############################
 
-  .nav {
+.nav {
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  text-align: right; /* Выравнивание по центру */
-  position: absolute;
-  right: 100px;  // Расположение в правой части экрана
-  left: 900px;  
-  top: 100px;    // Расположение в верхней части экрана
-  width: 100%; // Ширина на всю страницу
+  text-align: left; /* Выравнивание по левому краю */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 100px;  /* Расположение в левой части экрана */
+  top: 100px;   /* Расположение в верхней части экрана */
+  width: 100%; /* Ширина на всю страницу */
 }
 
 
 .nav a {
   display: inline-block;
-  margin-top: -50px; /* Поднять ссылки выше на 20px */
   padding: 10px 20px;
   color: white;
   text-decoration: none;
   font-size: 17px;
   background-color: rgba(255, 255, 255, 0.3);
+  position: relative; /* Это позволяет использовать свойства top, left, right, bottom */
+  margin-top: -50px; /* Поднять ссылки на 50px выше */
+  left: 1300px;  /* Расположение в левой части экрана */
+  top: 10px;   /* Расположение в верхней части экрана */
 }
 
 ##################
@@ -74,20 +76,20 @@
 .dropdown-content {
   display: none;
   position: absolute;
- left: 0; /* Убедитесь, что выпадающее меню выравнивается относительно начала родителя */
+  left: 0; /* Убедитесь, что выпадающее меню выравнивается относительно начала родителя */
   top: 100%; /* Убедитесь, что выпадающее меню начинается сразу после родителя */
-  
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 160px; // Ширина выподающего меню
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 100;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+    padding: 12px 16px;
+    margin: 0; /* Убедитесь, что между ссылками нет дополнительного пространства, вызывающего наложение */
+    display: block;
+    color: white;
+    text-decoration: none;
 }
 
 .dropdown:hover .dropdown-content {
@@ -95,28 +97,41 @@
 }
 
 .arrow {
-  transition: transform 0.3s;
+  transition: transform 0.9s;
 }
 
 .dropdown:hover .arrow {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
+}
+
+.dropdown .arrow {
+  transition: transform 0.9s;
+  transform: rotate(200deg); /* По умолчанию стрелка повернута влево */
+}
+
+.dropdown:hover .arrow {
+  transform: rotate(180deg); /* Поворачиваем стрелку на 180 градусов при наведении */
 }
 
 ################
+  .content {} 
+
 .content {
-font-size: 50px;
-  max-width: 200px; /* Примерное значение для 40 символов при размере шрифта 16px */
-  margin: 0 auto; /* Выравнивает блок по центру страницы */
-  padding: 20px; /* Добавляет внутренние отступы для визуального комфорта */
-  text-align: right; /* Для более ровного распределения текста в строке */
+  font-size: 25px;
+  max-width: 800px; /* Подходящая максимальная ширина для удобочитаемости */
+  margin: 0; /* Убираем автоматическое центрирование, если нужно */
+  color: white;
+  padding: 60px; /* Достаточный паддинг для визуального комфорта */
+  position: relative;
+  top: 0;
+  left: 0;  /* Расположение от левого края, если это необходимо */
+  text-align: justify; /* Выравнивание текста по ширине */
 }
-
-
 
 .logo {
   position: absolute; /* Абсолютное позиционирование относительно ближайшего позиционированного предка */
   top: 10px;   /* 0 пикселей от верхнего края */
-  left: 900px;  /* 0 пикселей от левого края */
+  left: 100px;  /* 0 пикселей от левого края */
   z-index: 10; /* Убедитесь, что логотип будет поверх других элементов */
 }
 
@@ -130,24 +145,75 @@ font-size: 50px;
   text-decoration: none; /* Убирает подчеркивание текста */
 }
 
-.logo a:hover {
-  /* В этом блоке можно добавить стили, которые будут применяться при наведении */
+.logo a:hover {  /* В этом блоке можно добавить стили, которые будут применяться при наведении */
   opacity: 0.8; /* Делает логотип немного прозрачнее при наведении */
 }
 
+.marquee-container {
+  position: fixed;
+  width: 100%;
+  height: 50%; /* Добавляем высоту для контейнера, чтобы он занимал всю видимую область */
+}
 
- /* Main content style */
-    .content {
-      position: relative;
-      padding: 150px 150px;
-      z-index: 1;
-      color: white;
-    }
-   
+.top-marquee {
+  position: absolute; /* Указываем абсолютное позиционирование */
+  top: 90%; /* Устанавливаем позицию верхней бегущей строки */
+  width: 100%; /* Ширина должна быть 100%, чтобы заполнить всю ширину родительского контейнера */
+}
+
+.bottom-marquee {
+  position: absolute; /* Указываем абсолютное позиционирование */
+  top: 80%; /* Устанавливаем позицию нижней бегущей строки */
+  width: 100%; /* Ширина должна быть 100%, чтобы заполнить всю ширину родительского контейнера */
+}
+
+.marquee {
+  width: 400%;
+  overflow: hidden;
+}
+
+.marquee img {
+  width: 200px;
+  margin-right: 40px;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+animation: marquee 15s linear infinite; /* Добавляем анимацию для бегущей строки */
+}
+ 
+.reverse-marquee img {
+  width: 200px;
+  margin-right: 40px;
+  animation-name: reverse-marquee;
+
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes reverse-marquee {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.support {
+  color: white; /* Указываем белый цвет текста */
+  font-size: 30px;
+  margin: 0;
+  position: relative;
+  top: 65%;
+  left: 50;
+  text-align: center;
+}
+
+.support a {
+  color: white; /* Устанавливаем цвет ссылок внутри .support в белый */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
   </style>
-
 </head>
-
 
   <div class="logo">
 <a href="/">
@@ -155,9 +221,25 @@ font-size: 50px;
 </a>
   </div>
 
+<div class="marquee-container top-marquee">
+  <div class="marquee">
+    <img src=".\source\logo\nvidia.png" alt="NVIDIA">
+    <img src=".\source\logo\AMD.png" alt="AMD">
+    <img src=".\source\logo\HPE.png" alt="HPE">
+    <img src=".\source\logo\GIGABYTE.png" alt="GIGABYTE">
+    <img src=".\source\logo\PureStorage.png" alt="PureStorage">
+  </div>
+</div>
 
-
-
+<div class="marquee-container bottom-marquee">
+  <div class="marquee reverse-marquee">
+    <img src=".\source\logo\nvidia.png" alt="NVIDIA">
+    <img src=".\source\logo\AMD.png" alt="AMD">
+    <img src=".\source\logo\HPE.png" alt="HPE">
+    <img src=".\source\logo\GIGABYTE.png" alt="GIGABYTE">
+    <img src=".\source\logo\PureStorage.png" alt="PureStorage">
+  </div>
+</div>
 
   <!-- Video Background -->
   <video id="background-video" autoplay loop muted playsinline>
@@ -176,15 +258,17 @@ font-size: 50px;
   		<div class="dropdown">
   		<a href="#service">Наши услуги<span class="arrow">&#9660;</span></a>
 		<div class="dropdown-content">
-		<a href="#team">Our Team</a>
-    		<a href="#history">Our History</a>
-    		<a href="#mission">Our Mission</a>
+		<a href="#team">Серверное оборудование</a>
+    		<a href="#history">Видео наблюдение</a>
+    		<a href="#mission">Решение для умного дома</a>
 </div>
-
-
     <a href="#about">О нас</a>
     <a href="#contact">Контакты</a>
 </div>  </div>
+
+  <div class="support">
+    <h2>Наши партнеры:</h2>
+</div>
 
   <div class="content">
     <h2>Добро пожаловать</h2>
@@ -192,24 +276,13 @@ font-size: 50px;
   </div>
 
 <script>
-    document.querySelector('.dropdown').addEventListener('click', function(event) {
-      var dropdownContent = this.querySelector('.dropdown-content');
-      if (dropdownContent.style.display === 'block') {
-        dropdownContent.style.display = 'none';
-      } else {
-        dropdownContent.style.display = 'block';
-      }
-      event.stopPropagation();
-    });
+document.querySelector('.dropdown').addEventListener('mouseenter', function(event) {
+    var dropdownContent = this.querySelector('.dropdown-content');
+    dropdownContent.style.display = 'block'; // Показываем подменю при наведении
+});
 
-    // Дополнительный код для закрытия меню при клике вне его
-    document.addEventListener('click', function(event) {
-      var openDropdown = document.querySelector('.dropdown-content');
-      if (openDropdown && !openDropdown.contains(event.target)) {
-        openDropdown.style.display = 'none';
-      }
-    });
-  </script>
-
-</body>
-</html>
+document.querySelector('.dropdown').addEventListener('mouseleave', function(event) {
+    var dropdownContent = this.querySelector('.dropdown-content');
+    dropdownContent.style.display = 'none'; // Скрываем подменю при убирании мыши
+});
+</script> </body> </html>

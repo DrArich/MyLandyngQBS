@@ -11,7 +11,6 @@
       font-family: Arial, sans-serif;
     }
 
-    /* Video Background */
   #background-video {
   position: fixed;
   top: 50%;  /* Центрируем по вертикали */
@@ -25,7 +24,6 @@
   z-index: -100;
   object-fit: cover; /* Гарантирует, что видео покроет элемент, сохраняя пропорции */
 }
-
       .header {
       background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
       color: #ffffff;
@@ -33,9 +31,7 @@
       text-align: center;
       z-index: 1;
     }
-
 ############################
-
 .nav {
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   text-align: left; /* Выравнивание по левому краю */
@@ -104,8 +100,6 @@
   transform: rotate(180deg); /* Поворачиваем стрелку на 180 градусов при наведении */
 }
 ################
-  .content {} 
-
 .content {
   font-size: 25px;
   max-width: 800px; /* Подходящая максимальная ширина для удобочитаемости */
@@ -175,7 +169,6 @@ animation: marquee 15s linear infinite; /* Добавляем анимацию �
   width: 200px;
   margin-right: 40px;
   animation-name: reverse-marquee;
-
 }
 
 @keyframes marquee {
@@ -188,24 +181,7 @@ animation: marquee 15s linear infinite; /* Добавляем анимацию �
   100% { transform: translateX(100%); }
 }
 
-.support {
-  color: white; /* Указываем белый цвет текста */
-  font-size: 30px;
-  margin: 0;
-  position: relative;
-  top: 65%;
-  left: 50;
-  text-align: center;
-}
-
-.support a {
-  color: white; /* Устанавливаем цвет ссылок внутри .support в белый */
-  text-decoration: none; /* Убираем подчеркивание у ссылок */
-}
-  </style>
-</head>
-
-  <div class="logo">
+<div class="logo">
 <a href="/">
     <img src=".\source\logo\logo.png" alt="Логотип компании">
 </a>
@@ -256,23 +232,8 @@ animation: marquee 15s linear infinite; /* Добавляем анимацию �
     <a href="#contact">Контакты</a>
 </div>  </div>
 
-  <div class="support">
-    <h2>Наши партнеры:</h2>
-</div>
-
   <div class="content">
     <h2>Добро пожаловать</h2>
     <p>Ваш надежный партнер в мире технологических решений. Мы — ведущий системный интегратор, специализирующийся на поставках сетевого и телекоммуникационного оборудования, системах видеонаблюдения, мультимедийных системах и инновационных решениях для умного дома. QuantumBitSolution стремится обеспечить каждого клиента передовыми, надежными и интуитивно понятными технологиями для дома и бизнеса.</p>
   </div>
-
-<script>
-document.querySelector('.dropdown').addEventListener('mouseenter', function(event) {
-    var dropdownContent = this.querySelector('.dropdown-content');
-    dropdownContent.style.display = 'block'; // Показываем подменю при наведении
-});
-
-document.querySelector('.dropdown').addEventListener('mouseleave', function(event) {
-    var dropdownContent = this.querySelector('.dropdown-content');
-    dropdownContent.style.display = 'none'; // Скрываем подменю при убирании мыши
-});
-</script> </body> </html>
+ </body> </html>

@@ -28,7 +28,7 @@
       z-index: 1;
     }
 
-############################
+
 
 .nav {
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
@@ -107,7 +107,7 @@
   transform: rotate(180deg); /* Поворачиваем стрелку на 180 градусов при наведении */
 }
 
-    ##############################
+  
 .content {}
 .content {
   font-size: 25px;

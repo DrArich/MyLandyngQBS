@@ -29,32 +29,34 @@
     .header {
       background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
       color: #ffffff;
-      padding: 10px 20px;
+      padding: 10px 220px;
       text-align: center;
       z-index: 1;
     }
 
 ############################
 
-  .nav {
+.nav {
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  text-align: right; /* Выравнивание по центру */
-  position: absolute;
-  right: 900px;  // Расположение в правой части экрана
-left: 900px;  // Не помогает переместить меню в левую сторону
-top: 100px;    // Расположение в верхней части экрана
-  width: 100%; // Ширина на всю страницу
+  text-align: left; /* Выравнивание по левому краю */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 100px;  /* Расположение в левой части экрана */
+  top: 100px;   /* Расположение в верхней части экрана */
+  width: 100%; /* Ширина на всю страницу */
 }
 
 
 .nav a {
   display: inline-block;
-  margin-top: -50px; /* Поднять ссылки выше на 20px */
   padding: 10px 20px;
   color: white;
   text-decoration: none;
   font-size: 17px;
   background-color: rgba(255, 255, 255, 0.3);
+  position: relative; /* Это позволяет использовать свойства top, left, right, bottom */
+  margin-top: -50px; /* Поднять ссылки на 50px выше */
+  left: 1000px;  /* Расположение в левой части экрана */
+  top: 10px;   /* Расположение в верхней части экрана */
 }
 
 ##################
@@ -74,11 +76,10 @@ top: 100px;    // Расположение в верхней части экра
 .dropdown-content {
   display: none;
   position: absolute;
- left: 0; /* Убедитесь, что выпадающее меню выравнивается относительно начала родителя */
-  top: 100%; /* Убедитесь, что выпадающее меню начинается сразу после родителя */
-  
+  left: 0; /* Убедитесь, что выпадающее меню выравнивается относительно начала родителя */
+  top: 280%; /* Убедитесь, что выпадающее меню начинается сразу после родителя */
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 160px; // Ширина выподающего меню
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -86,6 +87,7 @@ top: 100px;    // Расположение в верхней части экра
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
+line-height: 20px;  // Устанавливает высоту строки
   text-decoration: none;
   display: block;
 }
@@ -95,7 +97,7 @@ top: 100px;    // Расположение в верхней части экра
 }
 
 .arrow {
-  transition: transform 0.3s;
+  transition: transform 0.9s;
 }
 
 .dropdown:hover .arrow {
@@ -103,20 +105,31 @@ top: 100px;    // Расположение в верхней части экра
 }
 
 ################
+
+
+    .content {
+      
+      
+      
+      
+    } 
+
 .content {
-font-size: 90px;
-  max-width: 200px; /* Примерное значение для 40 символов при размере шрифта 16px */
-  margin: 0 auto; /* Выравнивает блок по центру страницы */
-  padding: 20px; /* Добавляет внутренние отступы для визуального комфорта */
-  text-align: right; /* Для более ровного распределения текста в строке */
+  font-size: 25px;
+  max-width: 800px; /* Подходящая максимальная ширина для удобочитаемости */
+  margin: 0; /* Убираем автоматическое центрирование, если нужно */
+  color: white;
+  padding: 60px; /* Достаточный паддинг для визуального комфорта */
+  position: relative;
+  top: 0;
+  left: 0;  /* Расположение от левого края, если это необходимо */
+  text-align: justify; /* Выравнивание текста по ширине */
 }
-
-
 
 .logo {
   position: absolute; /* Абсолютное позиционирование относительно ближайшего позиционированного предка */
   top: 10px;   /* 0 пикселей от верхнего края */
-  left: 900px;  /* 0 пикселей от левого края */
+  left: 20px;  /* 0 пикселей от левого края */
   z-index: 10; /* Убедитесь, что логотип будет поверх других элементов */
 }
 
@@ -136,13 +149,7 @@ font-size: 90px;
 }
 
 
- /* Main content style */
-    .content {
-      position: relative;
-      padding: 150px 150px;
-      z-index: 1;
-      color: white;
-    }
+
    
   </style>
 

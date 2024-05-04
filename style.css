@@ -197,7 +197,7 @@ animation: marquee 15s linear infinite; /* Добавляем анимацию �
   font-size: 30px;
   margin: 0;
   position: relative;
-  top: 65%;
+  top: 550px;
   left: 50;
   text-align: center;
 }

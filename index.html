@@ -6,6 +6,7 @@
   <title>Transparent Navigation Menu with Video Background</title>
 
   <style>
+
     body, html {
       height: 100%;
       margin: 0;
@@ -20,7 +21,7 @@
   transform: translate(-50%, -50%); /* Смещаем видео так, чтобы его центр был в центре экрана */
   min-width: 100%;
   min-height: 100%;
-   object-fit: cover;
+  object-fit: cover;
   width: auto;
   height: auto;
   z-index: -100;
@@ -154,26 +155,55 @@
 
 .marquee-container {
   position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
- 
+  height: 50%; /* Добавляем высоту для контейнера, чтобы он занимал всю видимую область */
+
+}
+
+.top-marquee {
+  position: absolute; /* Указываем абсолютное позиционирование */
+  top: 90%; /* Устанавливаем позицию верхней бегущей строки */
+  width: 100%; /* Ширина должна быть 100%, чтобы заполнить всю ширину родительского контейнера */
+}
+
+.bottom-marquee {
+  position: absolute; /* Указываем абсолютное позиционирование */
+  top: 80%; /* Устанавливаем позицию нижней бегущей строки */
+  width: 100%; /* Ширина должна быть 100%, чтобы заполнить всю ширину родительского контейнера */
 }
 
 .marquee {
-  width: 100%;
+  width: 400%;
   overflow: hidden;
 }
 
 .marquee img {
- width: 200px; /* Новая ширина логотипа */
-  margin-right: 20px; /* Расстояние между логотипами */
-  animation: marquee 15s linear infinite;
+  width: 200px;
+  margin-right: 40px;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+animation: marquee 15s linear infinite; /* Добавляем анимацию для бегущей строки */
 }
+
+
+
+.reverse-marquee img {
+  width: 200px;
+  margin-right: 40px;
+  animation-name: reverse-marquee;
+
+}
+
 
 @keyframes marquee {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
+}
+
+@keyframes reverse-marquee {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
    
   </style>
@@ -188,16 +218,23 @@
   </div>
 
 
-<div class="marquee-container">
+<div class="marquee-container top-marquee">
   <div class="marquee">
-    <img src=".\source\logo\OneShott.png" alt="OneShott">
     <img src=".\source\logo\nvidia.png" alt="NVIDIA">
     <img src=".\source\logo\AMD.png" alt="AMD">
-<img src=".\source\logo\openai.png" alt="OpenAI">
-<img src=".\source\logo\trans.png" alt="trans">
-<img src=".\source\logo\aonit.png" alt="aonit">
+    <img src=".\source\logo\HPE.png" alt="HPE">
+    <img src=".\source\logo\GIGABYTE.png" alt="GIGABYTE">
+    <img src=".\source\logo\PureStorage.png" alt="PureStorage">
+  </div>
+</div>
 
-
+<div class="marquee-container bottom-marquee">
+  <div class="marquee reverse-marquee">
+    <img src=".\source\logo\nvidia.png" alt="NVIDIA">
+    <img src=".\source\logo\AMD.png" alt="AMD">
+    <img src=".\source\logo\HPE.png" alt="HPE">
+    <img src=".\source\logo\GIGABYTE.png" alt="GIGABYTE">
+    <img src=".\source\logo\PureStorage.png" alt="PureStorage">
   </div>
 </div>
 

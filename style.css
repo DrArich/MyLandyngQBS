@@ -151,24 +151,29 @@ text-align: left;
 
 .top-marquee {
   position: absolute;
-  width: 80%;
+  width: 100%;
   top: 115%; /* Всегда в верхней части своего контейнера */
 }
 
 .bottom-marquee {
   position: absolute;
-  width: 80%;
+  width: 100%;
   top: 95%; /* Всегда в верхней части своего контейнера */
 
 }
 
 .marquee, .reverse-marquee {
+  display: flex; /* Использование Flexbox для лучшего контроля над элементами */
   width: 100%;
   overflow: visible;
   height: auto /* Заполняет высоту контейнера marquee */
   margin-bottom: 20px; 
-display: flex; /* Использование Flexbox для лучшего контроля над элементами */
-    flex-wrap: nowrap; /* Предотвращает перенос элементов на новую строку */
+ margin-top: 20px; /* Добавляем верхний отступ для разделения от других элементов */
+  flex-wrap: nowrap; /* Предотвращает перенос элементов на новую строку */
+justify-content: center; /* Центрирование содержимого */
+    align-items: center; /* Вертикальное выравнивание */
+  
+
 }
 
 .marquee img {
@@ -270,6 +275,15 @@ padding-left: 60px; /* Добавляем внутренний отступ сл
     top: 10px;
     left: 10px; // Меньший отступ слева для учета меньшего экрана
     width: 60px; // Меньший размер логотипа
+  }
+
+@media (max-width: 768px) {
+  .marquee-container, .top-marquee, .bottom-marquee {
+    position: static; /* Удаление абсолютного позиционирования */
+    top: auto;
+    width: 100%;
+    height: auto; /* Адаптивная высота */
+    overflow: visible;
   }
 
 @media (max-width: 768px) {

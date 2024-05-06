@@ -164,9 +164,11 @@ text-align: left;
 
 .marquee, .reverse-marquee {
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   height: auto /* Заполняет высоту контейнера marquee */
-margin-bottom: 20px; 
+  margin-bottom: 20px; 
+display: flex; /* Использование Flexbox для лучшего контроля над элементами */
+    flex-wrap: nowrap; /* Предотвращает перенос элементов на новую строку */
 }
 
 .marquee img {
@@ -276,6 +278,12 @@ padding-left: 60px; /* Добавляем внутренний отступ сл
     bottom: 20%; /* Увеличиваем отступ снизу, чтобы оставить место для marquee */
   }
 
+@media (max-width: 768px) {
+  .top-marquee, .bottom-marquee {
+    position: static; /* Замена абсолютного позиционирования на статическое */
+    top: auto; /* Удаление процентного позиционирования */
+    width: 100%; /* Обеспечение, что марки занимают всю ширину */
+  }
  
 }
 

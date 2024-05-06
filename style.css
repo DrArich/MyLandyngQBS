@@ -165,13 +165,13 @@ text-align: left;
 .marquee, .reverse-marquee {
   width: 100%;
   overflow: hidden;
-  height: 600%; /* Заполняет высоту контейнера marquee */
+  height: auto /* Заполняет высоту контейнера marquee */
 margin-bottom: 20px; 
 }
 
 .marquee img {
-  width: 200px;
-  margin-right: 40px;
+  width: 150px;
+  margin-right: 20px;
   animation-duration: 15s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -179,8 +179,8 @@ animation: marquee 15s linear infinite; /* Добавляем анимацию �
 }
  
 .reverse-marquee img {
-  width: 200px;
-  margin-right: 40px;
+  width: 150px;
+  margin-right: 20px;
   animation-name: reverse-marquee;
 
 }

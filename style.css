@@ -185,8 +185,9 @@ animation: marquee 15s linear infinite; /* Добавляем анимацию �
   color: white; /* Указываем белый цвет текста */
   font-size: 30px;
   margin: 0;
-  position: relative;
-  top: 580px;
+  position: absolute;
+    bottom:0;
+  top: 100px;
   left: 50;
   text-align: center;
 }

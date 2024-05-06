@@ -151,13 +151,13 @@ text-align: left;
 
 .top-marquee {
   position: absolute;
-  width: 100%;
+  width: 80%;
   top: 115%; /* Всегда в верхней части своего контейнера */
 }
 
 .bottom-marquee {
   position: absolute;
-  width: 100%;
+  width: 80%;
   top: 95%; /* Всегда в верхней части своего контейнера */
 
 }

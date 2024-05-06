@@ -152,13 +152,13 @@ text-align: left;
 .top-marquee {
   position: absolute;
   width: 100%;
-  top: 75%; /* Всегда в верхней части своего контейнера */
+  top: 80%; /* Всегда в верхней части своего контейнера */
 }
 
 .bottom-marquee {
   position: absolute;
   width: 100%;
-  top: 65%; /* Всегда в верхней части своего контейнера */
+  top: 70%; /* Всегда в верхней части своего контейнера */
 
 }
 
@@ -195,6 +195,32 @@ animation: marquee 15s linear infinite; /* Добавляем анимацию �
 @keyframes reverse-marquee {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
+}
+
+.content-button {
+  text-align: left; /* Выравнивание кнопки по центру */
+  margin-top: 20px; /* Отступ сверху для разделения от содержимого */
+padding-left: 60px;
+}
+
+.button-available {
+  display: inline-block;
+  padding: 10px 30px;
+  background: linear-gradient(90deg, #5F2EEA, #D4418E); /* Градиентный фон от фиолетового к розовому */
+  color: white; /* Белый текст */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none; /* Убираем подчеркивание */
+  border: none;
+  border-radius: 20px; /* Сильно закругленные углы */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Небольшая тень для добавления глубины */
+  transition: background-color 0.3s; /* Плавное изменение фона при наведении */
+}
+
+.button-available:hover {
+  background: linear-gradient(90deg, #4A22DB, #C31D82); /* Темнее при наведении */
 }
 
 .support {

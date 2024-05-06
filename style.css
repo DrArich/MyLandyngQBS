@@ -136,9 +136,12 @@ right: auto; /* И справа, чтобы занимать всю ширину
   position: absolute;
   width: 100%;
   bottom: 0; /* Располагаем в самом низу страницы */
-  height: 10%; /* Высота marquee, можно настроить по желанию */
+  height: 20%; /* Высота marquee, можно настроить по желанию */
   z-index: 5; /* Убедитесь, что marquee находится ниже support в стеке z-index */
 }
+
+
+
 
 .top-marquee, .bottom-marquee {
   position: absolute;
@@ -179,12 +182,11 @@ animation: marquee 15s linear infinite; /* Добавляем анимацию �
 }
 
 .support {
-  color: white; /* Указываем белый цвет текста */
+position: absolute;  
+color: white; /* Указываем белый цвет текста */
   font-size: 30px;
   margin: 0;
-  position: absolute;
-bottom:0;
-  top: 580px;
+  bottom:15%;
   left: 50;
   text-align: center;
 }

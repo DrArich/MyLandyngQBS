@@ -7,17 +7,24 @@
 
     /* Video Background */
   #background-video {
-  position: fixed;
-  top: 50%;  /* Центрируем по вертикали */
-  left: 50%; /* Центрируем по горизонтали */
-  transform: translate(-50%, -50%); /* Смещаем видео так, чтобы его центр был в центре экрана */
-  min-width: 100%;
-  min-height: 100%;
+  position: absolute;
+  top: 0;  /* Центрируем по вертикали */
+  left: 0; /* Центрируем по горизонтали */
+  right: 0;
+  bottom: 0;
   object-fit: cover;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100vh;
   z-index: -100;
  
+}
+
+body {
+  background-color: #003366; /* Темно-синий цвет */
+  color: white; /* Белый цвет текста для контраста */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Убираем горизонтальную прокрутку, если таковая появляется */
 }
 
 
@@ -194,6 +201,28 @@ color: white; /* Указываем белый цвет текста */
 .support a {
   color: white; /* Устанавливаем цвет ссылок внутри .support в белый */
   text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.parent-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Минимальная высота вьюпорта, чтобы вместить оба элемента */
+}
+
+
+.footer {
+  background-color: #1a1a1a; /* Темный фон для футера */
+  color: white; /* Белый текст */
+  text-align: center; /* Центрирование текста */
+  padding: 20px 0; /* Паддинг сверху и снизу */
+  font-family: Arial, sans-serif; /* Шрифт */
+  font-size: 14px; /* Размер шрифта */
+  border-top: 1px solid #444; /* Тонкая линия на верхней границе для разделения */
+  margin-top: 600px; /* Отступ сверху для разделения от остального контента */
+}
+
+.footer p {
+  margin: 10px 0; /* Отступы между параграфами */
 }
 
 

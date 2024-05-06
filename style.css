@@ -20,7 +20,7 @@
 }
 
 body {
-  background-color: #003366; /* Темно-синий цвет */
+  background-color: #02061d; /* Темно-синий цвет */
   color: white; /* Белый цвет текста для контраста */
   margin: 0;
   font-family: Arial, sans-serif;
@@ -142,24 +142,28 @@ right: auto; /* И справа, чтобы занимать всю ширину
 .marquee-container {
   position: absolute;
   width: 100%;
-  bottom: 0; /* Располагаем в самом низу страницы */
+  bottom: 50; /* Располагаем в самом низу страницы */
   height: 20%; /* Высота marquee, можно настроить по желанию */
   z-index: 5; /* Убедитесь, что marquee находится ниже support в стеке z-index */
 }
 
-
-
-
-.top-marquee, .bottom-marquee {
+.top-marquee {
   position: absolute;
   width: 100%;
-  top: 0; /* Всегда в верхней части своего контейнера */
+  top: 100%; /* Всегда в верхней части своего контейнера */
+}
+
+.bottom-marquee {
+  position: absolute;
+  width: 100%;
+  top: 85%; /* Всегда в верхней части своего контейнера */
 }
 
 .marquee, .reverse-marquee {
-  width: 400%;
+  width: 100%;
   overflow: hidden;
-  height: 100%; /* Заполняет высоту контейнера marquee */
+  height: 600%; /* Заполняет высоту контейнера marquee */
+margin-bottom: 20px; 
 }
 
 .marquee img {
@@ -177,6 +181,8 @@ animation: marquee 15s linear infinite; /* Добавляем анимацию �
   animation-name: reverse-marquee;
 
 }
+
+
 
 @keyframes marquee {
   0% { transform: translateX(100%); }

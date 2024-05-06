@@ -20,33 +20,38 @@
  
 }
 
-.nav {
-  background-color: rgba(0, 0, 0, 0); /* Полупрозрачный фон */
-  text-align: left; /* Выравнивание текста по левому краю */
-  position: absolute; /* Абсолютное позиционирование */
-  top: 5px;  /* Отступ сверху */
-  right: 250px;
- 
-  
+
+/* Родительский контейнер для .nav элементов */
+.nav-container {
+  display: flex;
+  justify-content: flex-end; /* Выравнивание элементов по правому краю */
+  align-items: center; /* Центрирование элементов по вертикали */
+  width: 100%; /* Полная ширина контейнера */
+  position: absolute;
+  top: 5px;
+  left: 100px; /* Размещаем контейнер слева */
+transform: translateX(-50%); /* Сдвигаем на половину своей ширины влево */  
+right: auto; /* И справа, чтобы занимать всю ширину */
 }
 
+/* Стили для .nav */
+.nav {
+  background-color: transparent; /* Полностью прозрачный фон */
+  text-align: right;
+  position: relative; /* Меняем на relative, чтобы элементы могли корректно работать внутри flexbox */
+}
+
+/* Стили для ссылок внутри .nav */
 .nav a {
   display: inline-block;
-  padding: 10px 20px; /* Паддинг для каждой ссылки */
-  color: white; /* Цвет текста */
-  text-decoration: none; /* Убираем подчеркивание */
-  font-size: 17px; /* Размер шрифта */
-  background-color: rgba(255, 255, 255, 0.3); /* Фон каждой ссылки */
-  margin: 15px 10; /* Добавляем небольшой отступ между ссылками */
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: rgba(255, 255, 255, 0.3); /* Полупрозрачный фон каждой ссылки */
+  margin: 0 5px; /* Уменьшаем отступы для более плотного размещения ссылок */
 }
 
-.nav a, .dropdown-content a {
-  padding: 10px 20px;
-  display: block;
-  text-decoration: none;
-  color: white;
-  background-color: #333;
-}
 
 .dropdown {
   position: relative;
@@ -58,7 +63,7 @@
   position: absolute;
   left: 0; /* Убедитесь, что выпадающее меню выравнивается относительно начала родителя */
   top: 100%; /* Убедитесь, что выпадающее меню начинается сразу после родителя */
-  background-color: #f9f9f9;
+ background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
   min-width: 160px; // Ширина выподающего меню
   box-shadow: none;
   z-index: 100;

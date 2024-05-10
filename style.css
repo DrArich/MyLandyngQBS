@@ -273,31 +273,36 @@ padding-left: 60px; /* Добавляем внутренний отступ сл
   .logo {
     position: absolute;
     top: 10px;
-    left: 10px; // Меньший отступ слева для учета меньшего экрана
-    width: 60px; // Меньший размер логотипа
+    left: 10px; /* Меньший отступ слева для учета меньшего экрана */
+    width: 60px; /* Меньший размер логотипа */
   }
 
-@media (max-width: 700px) {
+  .support {
+    font-size: 20px; /* Уменьшаем размер шрифта для мобильных устройств */
+    padding-bottom: 20px; /* Добавляем отступ снизу для визуального разделения */
+    text-align: center; /* Центрирование текста для лучшего вида */
+  }
+
   .marquee-container, .top-marquee, .bottom-marquee {
     position: static; /* Удаление абсолютного позиционирования */
-    top: 500%;
     width: 100%;
     height: auto; /* Адаптивная высота */
     overflow: visible;
+    margin-top: 20px; /* Добавляем верхний отступ после .support */
   }
 
-@media (max-width: 700px) {
-  .support {
-    font-size: 20px; /* Уменьшаем размер шрифта для мобильных устройств */
-    bottom: 20%; /* Увеличиваем отступ снизу, чтобы оставить место для marquee */
-  }
-
-@media (max-width: 700px) {
   .top-marquee, .bottom-marquee {
-    position: static; /* Замена абсолютного позиционирования на статическое */
-    top: auto; /* Удаление процентного позиционирования */
-    width: 100%; /* Обеспечение, что марки занимают всю ширину */
+    position: static;
+    width: 100%;
   }
+
+  #background-video {
+    width: 100%;
+    height: 100vh; /* Подтверждаем, что видео заполняет весь экран */
+    position: fixed; /* Убедитесь, что видео не сдвигается при прокрутке */
+  }
+}
+
  
 }
 

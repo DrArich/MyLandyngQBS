@@ -288,7 +288,7 @@ padding-left: 60px; /* Добавляем внутренний отступ сл
     width: 100%;
     height: auto; /* Адаптивная высота */
     overflow: visible;
-    margin-top: 20px; /* Добавляем верхний отступ после .support */
+    margin-top: 120px; /* Добавляем верхний отступ после .support */
   }
 
   .top-marquee, .bottom-marquee {

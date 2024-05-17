@@ -21,4 +21,11 @@
   opacity: 0.8; /* Делает логотип немного прозрачнее при наведении */
 }
 
+.contact-form {
+  position: absolute;
+  top 1000px;
+  left: 500px;
+  z-index: 11;
+  }
+
 </style>
